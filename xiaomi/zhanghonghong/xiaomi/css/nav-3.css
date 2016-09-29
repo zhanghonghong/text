@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+
+.nav-category .category-item .children {
+	position: absolute;
+	top: 0;
+	left: 234px;
+	width: auto;
+	height: 460px;
+	overflow: hidden;
+	background-color: #fff;
+	border-top: 1px solid #e0e0e0;
+	box-shadow: 0 5px 10px #b0b0b0;
+}
+.site-category-list .children-list {
+    padding: 2px 0;
+	float: left;
+	width: 265px;
+    height: 458px;
+}
+.site-category-list .children-list li {
+    position: relative;
+    float: left;
+    width: 265px;
+    height: 76px;
+}
+.site-category-list .children-list li.star-goods .link {
+    width: 170px;
+    padding-right: 0;
+}
+.site-category-list .children-list .link {
+    display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    color: #333;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+.site-category-list .children-list .link:hover {
+	color: #FF6700;
+}
+.site-category-list .children-list .thumb {
+    margin-right: 12px;
+    vertical-align: middle;
+}
+.site-category-list .children-list .text {
+    line-height: 40px;
+}
+.site-category-list .children-list .btn-buy {
+    position: absolute;
+    right: 10px;
+    top: 26px;
+    width: 58px;
+    height: 22px;
+    line-height: 22px;
+}

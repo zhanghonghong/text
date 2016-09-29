@@ -1,0 +1,189 @@
+@charset 'utf-8';
+html,
+body,
+div,
+ul,li,
+p,
+span,
+img {
+	margin: 0;
+	padding: 0;
+}
+a {
+    color: #757575;
+    text-decoration: none;
+}
+body {
+	font-size: 14px;
+	font-family: 'Microsoft Yahei';
+}
+.clearfix:after {
+	content: '';
+	height: 0;
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+.site-mini-header {
+    font-size: 12px;
+    border-bottom: 2px solid #ff6700;
+    background: #fff;
+    color: #b0b0b0;
+}
+.site-header {
+    position: relative;
+    z-index: 20;
+    height: 100px;
+}
+.container {
+    width: 1226px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.site-header .container {
+    position: relative;
+}
+.site-header .header-logo {
+    float: left;
+    width: 62px;
+    margin-top: 22px;
+}
+.site-mini-header .header-logo {
+    width: 93px;
+    margin-top: 26px;
+}
+.site-mini-header .topbar-info {
+    margin-top: 30px;
+    line-height: 40px;
+}
+.site-mini-header .topbar-cart,
+.site-mini-header .topbar-info {
+    position: relative;
+    float: right;
+    _display: inline;
+    height: 40px;
+}
+.site-mini-header .topbar-info .link,
+.site-mini-header .topbar-info .user,
+.site-mini-header .topbar-info .message,
+.site-mini-header .topbar-info .sep {
+    float: left;
+}
+.site-mini-header .topbar-info .link {
+    padding: 0 5px;
+}
+.site-mini-header a {
+    color: #757575;
+}
+.site-mini-header .topbar-info .sep {
+    color: #e0e0e0;
+    margin: 0;
+}
+/*pro-main*/
+.buy-choose-box {
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+.pro-choose-main {
+    position: relative;
+}
+.pro-view {
+    width: 600px;
+    height: 600px;
+    float: left;
+    _display: inline;
+    margin: 50px 0 0 48px;
+    overflow: hidden;
+}
+.pro-info {
+    float: right;
+    width: 544px;
+    margin-top: 60px;
+}
+.pro-info .pro-title {
+    height: 60px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #dfdfdf;
+    position: relative;
+}
+.pro-info .pro-title h1 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 56px;
+    font-weight: normal;
+}
+.pro-info .pro-title .pro-more {
+    position: absolute;
+    top: 26px;
+    right: 0;
+    color: #666;
+    font-size: 12px;
+}
+.pro-choose-step .step-title {
+    height: 36px;
+    line-height: 2;
+    margin: 0;
+    padding: 10px 0;
+    font-weight: normal;
+    font-size: 18px;
+}
+.pro-info .pro-title .pro-price {
+    margin-left: 10px;
+    color: #ff6700;
+}
+.pro-choose-step .pro-version-desc {
+    display: inline-block;
+    margin-left: 12px;
+    min-height: 20px;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+.pro-choose-step .step-list {
+    margin: 0 0 0 -14px;
+    padding: 0;
+}
+.pro-choose-step .step-list li {
+    float: left;
+    _display: inline;
+    width: 263px;
+    height: 48px;
+    font-size: 14px;
+    line-height: 48px;
+    margin: 0 0 14px 14px;
+    border: 1px solid #dfdfdf;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.pro-choose-step .step-list .active {
+    border-color: #f36701;
+}
+.option-btn {
+	width: 100%;
+    margin: 20px 0;
+}
+.option-btn .to-buy {
+	margin-right: 35px;
+}
+.option-btn .to-buy,
+.option-btn .add-to-cart {
+	float: left;
+	width: 220px;
+	height: 48px;
+	font-size: 14px;
+    line-height: 48px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    background-color: #FF6709;
+}
+.option-btn .to-buy:hover,
+.option-btn .add-to-cart:hover {
+	background-color:#ff936a;	
+	transition: 0.3s;
+}

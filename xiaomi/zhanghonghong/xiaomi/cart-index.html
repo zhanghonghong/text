@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/cart-index.css" />
+	</head>
+	<body>
+		<div class="site-header site-mini-header">
+			<div class="container clearfix">
+				<div class="header-logo">
+					<a href="index.html">
+						<img src="img/logo-footer.png" />
+					</a>
+				</div>
+				<div class="topbar-info">
+					<a class="link" href="login.html">登录</a>
+					<span class="sep">|</span>
+					<a class="link" href="register.html">注册</a>
+				</div>
+			</div>
+			<div class="container buy-choose-box">
+				<div class="pro-choose-main clearfix">
+					<div class="pro-view">
+						<img src="img/main.jpg" />
+					</div>
+					<div class="pro-info">
+						<div class="pro-title clearfix">
+							<h1>
+								<span class="pro-name">购买小米</span>
+								<span class="pro-price">1499元</span>
+							</h1>
+							<a class="pro-more" href="index.html">深入了解产品</a>
+						</div>
+						<p style="color:red">直降200元! 9.12-9.14，购机送1GB流量、小米随身蓝牙音箱，赢米家扫地机器人购买资格，1分钱开惊喜福袋，先到先得！</p>
+						<div class="J_proStep">
+							<div class="pro-choose-step J_step versions" data-index = "1">
+								<div class="step-title">
+									1.选择版本
+									<span class="pro-version-desc J_verDesc">高通骁龙652处理器，双卡双待，支持移动、联通、电信4G/3G/2G网络</span>
+								</div>
+								<ul class="step-list clearfix J_stepList">
+									<li class="J_stepItem active" data-node-id="811" data-desc="高通骁龙652处理器，双卡双待，支持移动、联通、电信4G/3G/2G网络" data-title="全网通 3GB内存+64GB容量" data-title-price="1499">  全网通 3GB内存+64GB容量  </li>
+									<li class="J_stepItem" data-node-id="807" data-desc="高通骁龙650处理器，双卡双待，支持移动、联通、电信4G/3G/2G网络" data-title="全网通 3GB内存+32GB容量" data-title-price="1299">  全网通 3GB内存+32GB容量  </li>
+									<li class="J_stepItem" data-node-id="812" data-desc="高通骁龙652处理器，双卡双待，支持移动、联通、电信4G/3G/2G网络" data-title="全网通 4GB内存+128GB容量" data-title-price="1799">  全网通 4GB内存+128GB容量  </li>
+									
+								</ul>
+							</div>
+							<div class="pro-choose-step J_step  color">
+								<div class="step-title">
+									2.选择颜色
+								</div>
+								<ul class="step-list clearfix J_stepList">
+									<li class="J_stepItem active" data-img="img/jin.jpg" data-node-id="813" data-title="金色">
+										<img src="img/icon-jin.png" alt="金色">
+										金色 
+									</li>
+									<li class="J_stepItem" data-img="img/yin.jpg" data-node-id="814" data-title="银色">
+										<img src="img/icon-yin.jpg" alt="银色">
+										银色 
+									</li>
+									<li class="J_stepItem" data-img="img/hui.jpg" data-node-id="815" data-title="浅灰 "> 
+										<img src="img/icon-qianhui.jpg" alt="浅灰">
+										  浅灰  
+									</li>
+								</ul>
+							</div>
+							<div class="option-btn clearfix">
+								<div class="to-buy">立即购买</div>
+								<div class="add-to-cart">加入购物车</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+		<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="js/json2.js" ></script>
+		<script>
+			$(function(){
+				var changeMsg = {
+					stepItemV: $('.versions .J_stepItem'),
+					stepItemC: $('.color .J_stepItem'),
+					proPrice: $('.pro-title .pro-price'),
+					versionDesc: $('.versions .pro-version-desc'),
+					img: $('.pro-view img'),
+					addToCart: $('.add-to-cart'),
+					init: function(){
+						this.stepItemClick();
+						this.addToCartClick();
+					},
+					stepItemClick: function(){
+						var that = this;
+						this.stepItemV.click(function(){
+							//console.log($(this));
+							var valM = $(this).data('desc');
+							var valP = $(this).data('title-price');
+							that.proPrice.html(valP);
+							that.versionDesc.html(valM);
+							$(this).addClass('active');
+							$(this).siblings().removeClass('active');
+						});
+						this.stepItemC.click(function(){
+							//console.log($(this));
+							var valImg = $(this).data('img');
+							//console.log($(this).data('img'));
+							//console.log( that.img.attr('src') );
+							that.img.attr('src',valImg);
+							$(this).addClass('active');
+							$(this).siblings().removeClass('active');
+						});
+					},
+					addToCartClick: function(){
+						var that = this;
+						this.addToCart.click(function(){
+							var info = {
+								idV: $('.versions .J_stepItem.active').data('node-id'),
+								nameV: $('.versions .J_stepItem.active').data('title'),
+								price: parseInt($('.versions .J_stepItem.active').data('title-price')),
+								idC: $('.color .J_stepItem.active').data('node-id'),
+								nameC: $('.color .J_stepItem.active').data('title'),
+								img: $('.color .J_stepItem.active').data('img'),
+								gamount: parseInt(1)
+							};
+							console.log(info);
+							//console.log(info.gamount);
+							//读取所有商品的cookie
+							//判断是否已经存在当前商品
+							var userCart = $.cookie('xiaomi-cart');
+							userCart = userCart || '{}';
+							userCart = JSON.parse(userCart);
+							
+							//判断购物车中是否有商品
+							if(!userCart[info.idV]){
+								userCart[info.idV] = {
+									idV: info.idV,
+									nameV: info.nameV,
+									price: info.price,
+									idC: info.idC,
+									nameC: info.nameC,
+									img: info.img,
+									gamount: info.gamount
+								}
+							}else{
+								userCart[info.idV].gamount += parseInt(info.gamount);
+							}
+							$.cookie('xiaomi-cart',JSON.stringify(userCart),{expires:365,path:'/zhanghonghong'});
+							
+							console.log(userCart);
+							//console.log(that.stepItemV.hasClass('active'));
+							//console.log(that.stepItemC.hasClass('active'));
+							if(!that.stepItemV.hasClass('active')|| !that.stepItemC.hasClass('active')){
+								alert('请选择商品详情...');
+							}else{
+								alert('正在加入购物车，请稍后...');
+							}
+							
+							
+						});
+					}
+				};
+				
+				changeMsg.init();
+				
+				
+			});
+
+		</script>
+	</body>
+</html>

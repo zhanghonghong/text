@@ -1,0 +1,302 @@
+@charset "utf-8";
+/*base css*/
+html,
+body,
+div,
+ul,li,
+p,
+img,
+a,
+h4 {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration:none;
+	color: #333;
+}
+li {
+	list-style: none;
+}
+body {
+	font-size: 14px;
+	font-family: 'Microsoft Yahei';
+	background-color: #f5f5f5;
+}
+.clearfix:after {
+	content: '';
+	height: 0;
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+}
+/*icon*/
+@font-face {font-family: 'iconfont';
+    src: url('iconfont.eot'); /* IE9*/
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:32px;
+    color: #757575;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/*main css*/
+.wrapper {
+	width: 100%;
+	height: 100%;
+}
+.wrapper .layout {
+    position: relative;
+    margin: 0 auto 20px;
+	background-color: #fff;
+    width: 854px;
+    height: 600px;
+    margin-top: 10px;
+}
+.wrapper .layout .mainbox {
+	padding-bottom: 30px;
+}
+.mainbox .header-title {
+	padding: 0 0 22px;
+	text-align: center;
+}
+.mainbox .header-title .milogo {
+	margin: 0 auto;
+	width: 49px;
+	height: 49px;
+	background:url(../img/mi-logo.png) #ef5b00 no-repeat;
+}
+.mainbox .header-title .header-title-tx {
+	font-size: 30px;
+    color: #424242;
+    font-weight: normal;
+    padding-top: 22px;
+}
+
+/*登录框*/
+.layout .mainbox .regbox {
+    width: 358px;
+    margin: 0 auto;
+    padding: 30px 0 20px 0;
+}
+.mainbox .regbox .listtit,
+.mainbox .regbox .inputbg,
+.mainbox .regbox .password {
+	width: 330px;
+	height: 40px;
+	margin-bottom: 14px;
+    border: 1px solid #e0e0e0;
+}
+.mainbox .regbox .labelbox.input-err,
+.mainbox .regbox .inputbg.input-err,
+.mainbox .regbox .password.input-err {
+    border: 1px solid #ff6700;
+}
+.mainbox .regbox .listtit {
+    position: relative;
+    cursor: pointer;
+    width: 268px;
+    height: 20px;
+    padding: 10px;
+}
+/*国家下拉列表选择*/
+.regbox .listtit .country-code {
+	width: 330px;
+    background: #fff;
+    height: 270px;
+    line-height: 30px;
+    border: 1px solid #e8e8e8;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    left: -1px;
+    top: 41px;
+    z-index: 98;
+    display: none;
+}
+.listtit .container .header {
+	background: #fcdecc;
+    padding-left: 10px;
+    margin-bottom: 6px;
+    height: 30px;
+    line-height: 30px;
+    color: #ef5b00 !important;
+}
+.listtit .container .list .record {
+	padding: 0 10px;
+    line-height: 39px;
+    clear: both;
+    overflow: hidden;
+    color: #000;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+.listtit .container .list .record:hover {
+	background-color:#eaeaea;
+}
+.country-code .list .record .record-country {
+    float: left;
+    max-width: 74%;
+    color: #000;
+    cursor: pointer;
+}
+.country-code .list .record .record-code {
+    float: right;
+    max-width: 20%;
+    color: #9d9d9d;
+}
+
+.regbox .listtit .select {
+    position: absolute;
+    top: -1px;
+    right: -42px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+
+}
+.regbox .listtit .select-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    margin: -8px 0 0 -8px;    
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    color: #e0e0e0;
+    border-radius: 50%;
+    font-size: 28px;
+}
+.mainbox .regbox .checkbox {
+    width: 330px;
+    height: 40px;
+    margin-bottom: 14px;
+}
+.mainbox .regbox input {
+	width: 310px;
+    height: 20px;
+    line-height: 20px;
+    padding: 10px;
+    outline: 0 none;
+    border: none;
+}
+.regbox .checkbox .labelbox {
+    display: inline-block;
+    width: 190px;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+    color: #333;
+}
+.regbox .checkbox .labelbox input {
+    width: 170px;
+}
+.checknum .chkcode_img {
+    margin-left: 1px;
+    vertical-align: middle;
+    cursor: pointer;
+	width: 125px;
+	height: 42px;
+}
+.mainbox .regbox .err_tip_phone,
+.mainbox .regbox .err_tip_psw,
+.mainbox .regbox .err_tip_checknum {
+	margin-bottom: 5px;
+	height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #ff6700;
+    display: none;
+}
+.mainbox .regbox .icon_error {
+	margin-right: 5px;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background-image: url(../img/error.png);
+	font-size: 12px;
+}
+.mainbox .regbox .reg-btn {
+	padding: 10px 0 15px 0;
+	width: 358px;
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    margin: 15px 0 30px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: #ef5b00;
+    cursor: pointer;
+}
+.mainbox .regbox .reg-btn:hover {
+	background-color: rgb(255,147,106);
+}
+.mainbox .regbox .msg {
+	margin-top: 10px;
+    color: #9d9d9d;
+    font-size: 12px;
+}
+.mainbox .regbox .msg a {
+	color: #333;
+	font-weight: bold;
+}
+.register {
+	border-right: 1px solid #e0e0e0;
+}
+/*底部*/
+.wrapper .footer {
+	height: 80px;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+.footer .link-area {
+	width:854px;
+	height: 22px;
+	position: relative;
+}
+.footer .link-area ul {
+	position: absolute;
+	top: 0;
+	left: 50%;
+    margin-left: 80px;
+    height: 22px;
+}
+.footer .link-area li {
+	float: left;
+}
+.footer .link-area li.last a {
+	border: none;
+}
+.wrapper .footer .link-area a {
+    padding: 0 12px;
+    color: #757575;
+    border-right: 1px solid #757575;
+    font-size: 12px;
+}
+.footer .link-area a:hover,
+.footer .link-area .current a {
+	color: #333;
+}
+.footer .mi-intro {
+	padding: 10px;
+	line-height: 1.5;
+    text-align: center;
+    color: #757575;
+    font-size: 12px;
+}
